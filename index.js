@@ -19,8 +19,6 @@ function btnAnimation(currentKey) {
 }
 
 function handleClick(className) {
-
-    // The Audio will create a new audio element
     var audioSrc = "sounds/" + info[className] + ".mp3";
     
     if (className === 'l') {
@@ -33,13 +31,10 @@ function handleClick(className) {
     btnAnimation(className);
 }
 
-// method querySelectorAll() returns a static (not live) NodeList but we can iterate it, there may be some problems while iterating in older browsers.
-
-// For button clicks
 var buttons = document.querySelectorAll('button.drum');
 
+// for clicks
 buttons.forEach(button => {
-    // we do not put () because it will not wait for the click if we put the ().
     button.addEventListener('click', () => {
         // providing our class name
         handleClick(button.getAttribute("class")[0]);
